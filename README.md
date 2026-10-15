@@ -17,9 +17,9 @@ A simple animated login page built with HTML, CSS, and JavaScript.
 This project is a front-end learning mini-project. The login credentials are hardcoded for demonstration purposes and are not suitable for real authentication.
 
 ## Getting Started
-Clone or download the repository and open `index.html` in your browser.
+Clone or download the repository and open `index.html` in your browser.  
 You can test true, false, or empty inputs to see what happens!
 
-The correct username and password is:
-amirali
-modaresi
+The correct username and password is:  
+username: amirali  
+password: modaresi  
