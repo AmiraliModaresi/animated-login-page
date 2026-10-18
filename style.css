@@ -188,3 +188,24 @@ body {
 }
 
 /* Alert end */
+
+@media (max-width: 600px) {
+    .formTitle{
+        font-size: 26px;
+    }
+    .formInput,
+    .submitBtn,
+    .alert {
+        width: 200px;
+    }
+    .formInput{
+        height: 30px;
+        margin-bottom: 6px;
+    }
+    .submitBtn{
+        height: 24px;
+    }
+    .alert{
+        height: 40px;
+    }
+}
