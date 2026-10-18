@@ -4,6 +4,10 @@
 const userName = 'amirali';
 const password = 'modaresi';
 
+// making the sides gap responsive!:
+const vw = window.innerWidth;
+let sideMargin = -((2250 - vw)) *0.4;
+
 const squirsArr = [
     document.querySelector('.leftGreenDiv'),
     document.querySelector('.redDiv'),
@@ -52,8 +56,8 @@ const inputPassword = document.querySelector('#passInput');
 
 // load animation:
 addEventListener("load", () => {
-    leftSide.style.left = '-20%';
-    rightSide.style.right = '-20%';
+    leftSide.style.left = sideMargin + 'px';
+    rightSide.style.right = sideMargin + 'px';
     setTimeout(() => {
         center.style.opacity = '1';
     }, 300);
@@ -73,11 +77,11 @@ btn.addEventListener("click", () => {
         // zoom animation:
         leftSide.style.transition = '0.3s ease';
         rightSide.style.transition = '0.3s ease';
-        leftSide.style.left = '-15%';
-        rightSide.style.right = '-15%';
+        leftSide.style.left = (sideMargin + (0.05 * vw)) + 'px';
+        rightSide.style.right = (sideMargin + (0.05 * vw)) + 'px';
         setTimeout(() => {
-            leftSide.style.left = '-20%';
-            rightSide.style.right = '-20%';
+            leftSide.style.left = sideMargin + 'px';
+            rightSide.style.right = sideMargin + 'px';
         }, 200);
 
         messageAlert("Fill in the blanks", "#fff265");
@@ -104,7 +108,7 @@ function colorAlert(arrayName) {
     let colorCounter = 0;
 
     let inter = setInterval(() => {
-        // 12 is the color counter after the colors change back to normal.
+
         if (colorCounter >= totalSteps) {
             clearInterval(inter);
             isColorAlertRunning = false;
@@ -122,7 +126,12 @@ function colorAlert(arrayName) {
     }, 100);
 }
 
+let isMessageAlertRunning = false;
 function messageAlert(text, color) {
+    if (isMessageAlertRunning) return;
+
+    isMessageAlertRunning = true;
+
     alertText.textContent = text;
     alertDiv.style.backgroundColor = color;
     alertDiv.style.opacity = '1';
@@ -130,5 +139,7 @@ function messageAlert(text, color) {
     setTimeout(() => {
         alertDiv.style.bottom = '0px';
         alertDiv.style.opacity = '0';
+        
+        isMessageAlertRunning = false;
     }, 2000);
 }
