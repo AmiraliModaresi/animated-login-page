@@ -6,7 +6,7 @@ const password = 'modaresi';
 
 // making the sides gap responsive!:
 const vw = window.innerWidth;
-let sideMargin = -((2250 - vw)) *0.4;
+let sideMargin = -((2250 - vw)) * 0.4;
 
 const squirsArr = [
     document.querySelector('.leftGreenDiv'),
@@ -86,7 +86,7 @@ btn.addEventListener("click", () => {
 
         messageAlert("Fill in the blanks", "#fff265");
 
-    } else if (inputUserName.value === userName && inputPassword.value === password) {
+    } else if (inputUserName.value.trim() === userName && inputPassword.value.trim() === password) {
         // true userpass
         colorAlert(greenWarnColors);
         messageAlert("Login successful", "#8deca2");
@@ -139,7 +139,7 @@ function messageAlert(text, color) {
     setTimeout(() => {
         alertDiv.style.bottom = '0px';
         alertDiv.style.opacity = '0';
-        
+
         isMessageAlertRunning = false;
     }, 2000);
 }
